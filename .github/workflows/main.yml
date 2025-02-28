@@ -15,9 +15,10 @@ jobs:
           token: ${{ secrets.MY_PAT }}
           fetch-depth: 0
 
-      - name: Download GitBook Docs Content
+      - name: Download GitBook Docs Content and rename to index.html
         run: |
-          curl -sL https://h3rmes.gitbook.io/h3rmes-docs -o index.html
+          curl -LO https://h3rmes.gitbook.io/h3rmes-docs/
+          mv h3rmes-docs index.html
 
       - name: Pull remote changes, commit, and push updates
         run: |
