@@ -26,4 +26,4 @@ jobs:
           git pull origin main --rebase
           git add index.html
           git commit -m "Update index.html from GitBook Docs [Automated]" || echo "No changes to commit"
-          git push origin main
+          git push --force-with-lease origin main
